@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{% static 'js/profile-formset.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="form-group">
+                    {{ form.first_name.label_tag }}
+                    {{ form.first_name }}
+                    {{ form.first_name.errors }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    {{ form.last_name.label_tag }}
+                    {{ form.last_name }}
+                    {{ form.last_name.errors }}
+                </div>
+            </div>
+
+            {{ attribute_formset.management_form }}
+
+            {% if attribute_formset.non_form_errors %}
+                {{ attribute_formset.non_form_errors }}
+            {% endif %}
+
+            {% for category, forms in attribute_formset.grouped_forms %}
+                <div class="col-md-12"><hr></div>
+                <div class="col-md-2"><h3>{{ category }}</h3></div>
+                <div class="col-md-10">
+                    <div class="clearfix formset-forms">
+                        {% for form in forms %}
+                            {% include 'account/includes/formset_form.html' with form=form %}
+                        {% endfor %}
+                    </div>
+                    <a href="javascript:void(0);" class="formset-btn-add-form" data-group="{{ category|slugify }}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add more</a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-12">
+            <hr>
+            <div class="pull-right">
+                <input type="submit" class="btn btn-success" value="Save">
+                <a href="{% url 'profile-edit' %}" class="btn btn-danger">Cancel</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="hidden">
+    {% for category, form in attribute_formset.empty_forms.items %}
+        <div id="empty-form-{{ category|slugify }}">
+            {% include 'account/includes/formset_form.html' with form=form %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}

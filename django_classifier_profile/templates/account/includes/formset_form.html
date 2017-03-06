@@ -1,0 +1,25 @@
+<div class="form-user-attribute">
+    <div class="col-md-4">
+        <div class="form-group">
+            {{ form.label }}
+            {{ form.label.errors }}
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div class="form-group">
+            {{ form.value }}
+            {{ form.value.errors }}
+        </div>
+    </div>
+    <div class="col-md-1">
+        <div class="form-group">
+            <button type="button" class="btn btn-default formset-btn-delete">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            </button>
+            <span class="hidden">{{ form.DELETE }}</span>
+            {{ form.DELETE.errors }}
+        </div>
+    </div>
+    {{ form.user.as_hidden }}
+    {{ form.id }}
+</div>

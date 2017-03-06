@@ -1,0 +1,237 @@
+[
+{
+    "model": "account.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$M5GHF1M816O6$qboBcGY8q9BfjPpZcLJRI+jpR1wbRD0C0ah3XqEEIWc=",
+        "last_login": "2017-03-05T09:18:11Z",
+        "is_superuser": true,
+        "email": "admin@localhost",
+        "first_name": "Classifier",
+        "last_name": "Django",
+        "is_staff": true,
+        "is_active": true,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.userattributeclassifier",
+    "pk": 1,
+    "fields": {
+        "kind": "birthday",
+        "value_type": "date",
+        "value_validator": "",
+        "only_one_required": false,
+        "category": "General"
+    }
+},
+{
+    "model": "account.userattributeclassifier",
+    "pk": 2,
+    "fields": {
+        "kind": "im",
+        "value_type": "str",
+        "value_validator": "",
+        "only_one_required": false,
+        "category": "IM"
+    }
+},
+{
+    "model": "account.userattributeclassifier",
+    "pk": 3,
+    "fields": {
+        "kind": "phone",
+        "value_type": "str",
+        "value_validator": "\\+\\d{12}",
+        "only_one_required": false,
+        "category": "Phone"
+    }
+},
+{
+    "model": "account.userattributeclassifier",
+    "pk": 4,
+    "fields": {
+        "kind": "social",
+        "value_type": "str",
+        "value_validator": "",
+        "only_one_required": false,
+        "category": "Social"
+    }
+},
+{
+    "model": "account.userattributeclassifierlabel",
+    "pk": 1,
+    "fields": {
+        "label": "Birthday",
+        "required": true,
+        "classifier": 1,
+        "slug": "birthday"
+    }
+},
+{
+    "model": "account.userattributeclassifierlabel",
+    "pk": 2,
+    "fields": {
+        "label": "Skype",
+        "required": true,
+        "classifier": 2,
+        "slug": "skype"
+    }
+},
+{
+    "model": "account.userattributeclassifierlabel",
+    "pk": 3,
+    "fields": {
+        "label": "GTalk",
+        "required": false,
+        "classifier": 2,
+        "slug": ""
+    }
+},
+{
+    "model": "account.userattributeclassifierlabel",
+    "pk": 4,
+    "fields": {
+        "label": "Mobile",
+        "required": true,
+        "classifier": 3,
+        "slug": "mobile"
+    }
+},
+{
+    "model": "account.userattributeclassifierlabel",
+    "pk": 5,
+    "fields": {
+        "label": "Home",
+        "required": false,
+        "classifier": 3,
+        "slug": ""
+    }
+},
+{
+    "model": "account.userattributeclassifierlabel",
+    "pk": 6,
+    "fields": {
+        "label": "Work",
+        "required": false,
+        "classifier": 3,
+        "slug": ""
+    }
+},
+{
+    "model": "account.userattributeclassifierlabel",
+    "pk": 7,
+    "fields": {
+        "label": "Emergency",
+        "required": false,
+        "classifier": 3,
+        "slug": ""
+    }
+},
+{
+    "model": "account.userattributeclassifierlabel",
+    "pk": 8,
+    "fields": {
+        "label": "Facebook",
+        "required": false,
+        "classifier": 4,
+        "slug": ""
+    }
+},
+{
+    "model": "account.userattributeclassifierlabel",
+    "pk": 9,
+    "fields": {
+        "label": "Google Plus",
+        "required": false,
+        "classifier": 4,
+        "slug": ""
+    }
+},
+{
+    "model": "account.userattributeclassifierlabel",
+    "pk": 10,
+    "fields": {
+        "label": "LinkedIn",
+        "required": false,
+        "classifier": 4,
+        "slug": ""
+    }
+},
+{
+    "model": "account.userattributeclassifierlabel",
+    "pk": 11,
+    "fields": {
+        "label": "Twitter",
+        "required": false,
+        "classifier": 4,
+        "slug": ""
+    }
+},
+{
+    "model": "account.userattributeclassifierlabel",
+    "pk": 12,
+    "fields": {
+        "label": "Instagram",
+        "required": false,
+        "classifier": 4,
+        "slug": ""
+    }
+},
+{
+    "model": "account.userattributeclassifierlabel",
+    "pk": 13,
+    "fields": {
+        "label": "Site/Blog",
+        "required": false,
+        "classifier": 4,
+        "slug": ""
+    }
+},
+{
+    "model": "account.userattribute",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "label": 1,
+        "value": "2000-01-01"
+    }
+},
+{
+    "model": "account.userattribute",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "label": 2,
+        "value": "fake_skype"
+    }
+},
+{
+    "model": "account.userattribute",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "label": 4,
+        "value": "+555555555555"
+    }
+},
+{
+    "model": "account.userattribute",
+    "pk": 4,
+    "fields": {
+        "user": 1,
+        "label": 13,
+        "value": "https://django-classifier.readthedocs.io"
+    }
+},
+{
+    "model": "account.userattribute",
+    "pk": 5,
+    "fields": {
+        "user": 1,
+        "label": 7,
+        "value": "+666666666666"
+    }
+}
+]
